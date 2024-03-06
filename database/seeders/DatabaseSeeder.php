@@ -12,9 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
-            'name'  => 'Administrateur',
-            'email' => 'admin@unitead.fr',
+        User::create([
+            'name'              => 'Administrateur',
+            'email'             => 'admin@unitead.fr',
+            'password'          => bcrypt('password'),
+            'email_verified_at' => now(),
         ]);
     }
 }
