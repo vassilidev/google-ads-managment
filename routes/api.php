@@ -15,7 +15,8 @@ Route::post('fetch-campaigns', function () {
    return \Illuminate\Support\Facades\Artisan::call('app:fetch-google-ads-campaign');
 });
 
-Route::apiResource('ads', CampaignController::class);
+Route::apiResource('ads', CampaignController::class)->except('update');
+Route::post('ads/{ad}', [CampaignController::class, 'update'])->name('ads.update');
 
 Route::get('/ping', function () {
     $randomAd = Ad::inRandomOrder()->first();
