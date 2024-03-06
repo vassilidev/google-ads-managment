@@ -29,11 +29,11 @@ class UpdateAdRequest extends FormRequest
             ],
             'budget'     => [
                 'sometimes',
-                'int',
+                'numeric',
             ],
             'cpa_target' => [
                 'sometimes',
-                'int',
+                'numeric',
             ],
         ];
     }
