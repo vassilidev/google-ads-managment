@@ -40,12 +40,8 @@ class CampaignController extends Controller
 
         $service = app(GoogleAdsService::class);
 
-        $campaign = $service->updateCampaign($ad->ad_id, $validatedData);
+        $service->updateCampaign($ad->ad_id, $validatedData);
 
-        if ($campaign) {
-            return response()->json($campaign);
-        }
-
-        return response()->json('', 400);
+        return response()->json();
     }
 }
