@@ -38,6 +38,20 @@ class CampaignController extends Controller
     {
         $validatedData = $request->validated();
 
+        if ($request->get('cpa_target')) {
+            $ad->target_cpa = $request->get('target_cpa');
+        }
+
+        if ($request->get('name')) {
+            $ad->name = $request->get('name');
+        }
+
+        if ($request->get('budget')) {
+            $ad->budget = $request->get('budget');
+        }
+
+        $ad->save();
+
         $service = app(GoogleAdsService::class);
 
         $service->updateCampaign($ad->ad_id, $validatedData);
