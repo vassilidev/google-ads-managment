@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "List",
+			"name": "Get All Campaigns",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -19,9 +19,11 @@
 				],
 				"url": {
 					"raw": "https://unitead.the-forge.agency/api/ads",
-					"protocol": "http",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"unitead",
+						"the-forge",
+						"agency"
 					],
 					"path": [
 						"api",
@@ -32,7 +34,7 @@
 			"response": []
 		},
 		{
-			"name": "Info",
+			"name": "Get Campaign From Ad ID",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -43,7 +45,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://unitead.the-forge.agency/api/ads/20023442762",
+					"raw": "http://localhost/api/ads/20023442762",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -58,8 +60,36 @@
 			"response": []
 		},
 		{
-			"name": "Info Copy",
+			"name": "Fetch Campaign Run Script",
 			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/api/fetch-campaigns",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"fetch-campaigns"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PING PONG Status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -69,48 +99,21 @@
 					}
 				],
 				"url": {
-					"raw": "https://unitead.the-forge.agency/api/ads/20023442762",
+					"raw": "http://localhost/api/ping",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"api",
-						"ads",
-						"20023442762"
+						"ping"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "PING",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://unitead.the-forge.agency/api/ads/20023442762",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"path": [
-						"api",
-						"ads",
-						"20023442762"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update",
+			"name": "Update Name / Budget / CPA Target from Ad ID",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -135,7 +138,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://unitead.the-forge.agency/api/ads/20023442762",
+					"raw": "http://localhost/api/ads/20023442762",
 					"protocol": "http",
 					"host": [
 						"localhost"
