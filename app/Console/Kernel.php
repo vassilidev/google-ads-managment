@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         $schedule->command('telescope:prune --hours=72')->daily();
-        $schedule->command(FetchGoogleAdsCampaign::class)->everyFiveMinutes();
+        $schedule->command(FetchGoogleAdsCampaign::class)->everyFifteenMinutes();
     }
 
     /**
